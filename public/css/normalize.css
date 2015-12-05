@@ -1,0 +1,24 @@
+*{
+	margin: 0;
+}
+html, body{
+	background-color: #EFEFEF;
+	font-family: sans-serif;
+	height: 100%;
+}
+.page-wrap{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -153px;
+}
+.footer, .push{
+	height: 153px;
+}
+a{
+	text-decoration: none; 
+	color: inherit;
+}
+ul li{
+	list-style: none;
+}

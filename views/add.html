@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Походник - сводим туристов с гидами</title>
+		<meta charset = "utf-8">
+		<meta type ="name" content = "Походник">
+		<link rel = "stylesheet" href = "./css/normalize.css">
+		<link rel = "stylesheet" href = "./css/styles.css">
+	</head>
+	<body>
+	<div class = "page-wrap">
+		<header>
+			<img class = "header-logo" src = "" alt = "Логотип">
+			<ul class = "navbar">
+				<li>
+					<a href = "">Маршруты</a>
+				</li>
+				<li>
+					<a href = "">Походники</a>
+				</li>
+				<li>
+					<a href = "">Места</a>
+				</li>
+			</ul>
+			<a>
+				<div class = "button">
+					Организовать поход
+				</div>
+			</a>
+				<div class = "auth">
+					<a href = "">Войти</a>
+					<a href = "">Зарегистрироваться</a>
+				</div>
+		</header>
+
+		<form class = "organize" method="POST">
+			<div class = "map" id="map">
+
+			</div>
+			<h1>Организовать поход</h1>
+			<div class = "head">
+				<h2>Название похода</h2>
+				<input type = "text" name="name" placeholder = "Введите название вашего похода">
+			</div>
+			<div class = "head">
+				<h2>Город отправления</h2>
+				<input type = "text" name="city" placeholder = "Введите название вашего города">
+			</div>
+			<h2>Вид похода</h2>
+			<select class = "small-form" name = "type">
+				<option value = "hiking">Пеший</option>
+				<option value = "cave">Спелеология</option>
+				<option value = "moto">Мото</option>
+				<option value = "bicycle">Велосипедный</option>
+				<option value = "ski">Лыжный</option>
+				<option value = "auto">Автомобильный</option>
+				<option value = "hill">Горный</option>
+				<option value = "raft">Сплав</option>
+				<option value = "mount">Альпинизм</option>
+				<option value = "combo">Комбо</option>
+			</select>
+			<h2>Уровень сложности</h2>
+			<select class = "small-form" name = "difficulty">
+				<option value = "ez">Легкий</option>
+				<option value = "md">Средний</option>
+				<option value = "hd">Сложный</option>
+			</select>
+			<h2>Описание похода</h2>
+			<input class = "big-form" type = "text" class = "anons" name="description" placeholder = "Введите примерное описание вашего похода">
+			<div class = "dates">
+				<div class = "date"><h2>Начало</h2>
+				<input class = "tiny-form" type = "date" name = "date_start"></div>
+				<div class = "date"><h2>Конец</h2>
+				<input class = "tiny-form" type = "date" name = "date_end"></div>
+			</div>
+			<h2>Максимальное количество участников</h2>
+			<input class = "medium-form" type = "text" name="max_participants" placeholder = "0">
+			<h2>Бюджет похода</h2>
+			<input class = "small-form" type = "text" name="price" placeholder = "на человека">
+			<input type="submit" class="button" value="Создать">
+			<input type="text" name="coords" class="coords">
+		</form>
+		<div class = "push"></div>
+	</div>
+		<footer>
+			<img class = "logo" src = "" alt = "logo">
+			<ul>
+				<li>Маршруты</li>
+				<li>Водные</li>
+				<li>Горные</li>
+				<li>Приключенческие</li>
+				<li>Романтические</li>
+			</ul>
+			<ul>
+				<li>Походники</li>
+				<li>Компаньоны</li>
+				<li>Проводники</li>
+				<li>Агентства</li>
+			</ul>
+			<ul>
+				<li>Точки</li>
+				<li>Города</li>
+				<li>Места</li>
+			</ul>
+			<ul>
+				<li>Контакты</li>
+				<li>О проекте</li>
+				<li>Контакты</li>
+				<li>Я - организатор</li>
+			</ul>
+			<ul class = "SSlinks">
+				<li>Мы в социальных сетях</li>
+				<li class = "icon"><a><img src = "./img/icons/vk-icon.png" ></a></li>
+				<li class = "icon"><a><img src = "./img/icons/google_plus icon.png" ></a></li>
+				<li class = "icon"><a><img src = "./img/icons/twitter-icon.png" ></a></li>
+				<li class = "icon"><a><img src = "./img/icons/facebook  icon.png" ></a></li>
+			</ul>
+		</footer>
+
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<script type="text/javascript" src="/js/add_script.js"></script>
+	</body>

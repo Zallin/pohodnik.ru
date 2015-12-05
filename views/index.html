@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Походник - сводим туристов с гидами</title>
+		<meta charset = "utf-8">
+		<meta type ="name" content = "Походник">
+		<link rel = "stylesheet" href = "/css/normalize.css">
+		<link rel = "stylesheet" href = "/css/styles.css">
+	</head>
+	<body>
+		<div class = "page-wrap">
+			<header>
+				<img class = "header-logo" src = "" alt = "Логотип">
+				<ul class = "navbar">
+					<li>
+						<a href = "">Маршруты</a>
+					</li>
+					<li>
+						<a href = "">Походники</a>
+					</li>
+					<li>
+						<a href = "">Места</a>
+					</li>
+				</ul>
+				<a>
+					<div class = "button">
+						<a href="/add_hike">Организовать поход</a>
+					</div>
+				</a>
+				<div class = "auth">
+					<a href = "">Войти</a>
+					<a href = "">Зарегистрироваться</a>
+				</div>
+			</header>
+			<section>
+				<div class = "welcome">
+					<div class = "search">
+						<input type = "text" name = "place" placeholder = "например, алтайский край">
+						<a href = ""><div class = "button">Найти поход</div></a>
+					</div>
+				</div>
+				<div class = "category-list">
+					<ul>
+						<a><li class = "hiking"><p>Пеший</p></li></a>
+						<a><li class = "cave"><p>Спелеология</p></li></a>
+						<a><li class = "moto"><p>Мото</p></li></a>
+						<a><li class = "biking"><p>Велосипедный</p></li></a>
+						<a><li class = "ski"><p>Лыжный</p></li></a>
+						<a><li class = "auto"><p>Автомобильный</p></li></a>
+						<a><li class = "animal"><p>Животные</p></li></a>
+						<a><li class = "river"><p>Сплавы</p></li></a>
+						<a><li class = "mount"><p>Альпинизм</p></li></a>
+						<a><li class = "combo"><p>Комбинированные</p></li></a>
+					</ul>
+				</div>
+				<div class = "new-events">
+					<h2>Новые походы</h2>
+					<div class = "map" id="map"></div>
+					<ul class = "new-events">
+						<a><li><img class = "guide-ph" src ="/img/guide-ph.png"><h3>Пещеры Владивостока</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p></li></a>
+						<a><li><img class = "guide-ph" src ="/img/guide-ph.png"><h3>Сплав на байдарках на Лене</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p></li></a>
+						<a><li><img class = "guide-ph" src ="/img/guide-ph.png"><h3>Восхождение на сопки камчатки</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p></li></a>
+						<a><li><img class = "guide-ph" src ="/img/guide-ph.png"><h3>Сибирский тракт</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p></li></a>
+					</ul>
+				</div>
+				<div class = "announce">
+					<p>Есть идеи интересных походов? Добавьте маршрут!</p>
+					<a><div class = "button">Организовать поход!</div></a>
+				</div>
+				<div class = "user-list">
+					<h2>Собираются в поход</h2>
+					<ul>
+						<a>
+						<li>
+								<div class = "name_ph">
+									<img  src ="./img/guide-ph.png">
+									<p>Имя юзера</p>
+								</div>
+								<div class = "info">
+									<h3>Город и дата</h3>
+									<p>Информация о походе, информация о походе,информация о походе,информация о походе</p>
+								</div>
+							</li>
+						</a>
+						<a>
+							<li>
+								<div class = "name_ph">
+									<img  src ="/img/guide-ph.png">
+									<p>Имя юзера</p>
+								</div>
+								<div class = "info">
+									<h3>Город и дата</h3>
+									<p>Информация о походе, информация о походе,информация о походе,информация о походе</p>
+								</div>
+							</li>
+						</a>
+						<a>
+							<li>
+								<div class = "name_ph">
+									<img  src ="/img/guide-ph.png">
+									<p>Имя юзера</p>
+								</div>
+								<div class = "info">
+									<h3>Город и дата</h3>
+									<p>Информация о походе, информация о походе,информация о походе,информация о походе</p>
+								</div>
+							</li>
+						</a>
+						<a>
+							<li>
+								<div class = "name_ph">
+									<img  src ="/img/guide-ph.png">
+									<p>Имя юзера</p>
+								</div>
+								<div class = "info">
+									<h3>Город и дата</h3>
+									<p>Информация о походе, информация о походе,информация о походе,информация о походе</p>
+								</div>
+							</li>
+						</a>
+					</ul>
+				</div>
+				<div class = "feedback">
+					<h2>Опыт и впечатления</h2>
+					<ul>
+						<li>
+							<div class = "mini-map"></div>
+							<div class = "feedback-info">
+								<img  src ="/img/guide-ph.png">
+								<p>Отзыв о мероприятии, отзыв о мероприятии, отзыв о мероприятии, отзыв о мероприятии, </p>
+							</div>
+						</li>
+						<li>
+							<div class = "mini-map"></div>
+							<div class = "feedback-info">
+								<img  src ="/img/guide-ph.png">
+								<p>Отзыв о мероприятии, отзыв о мероприятии, отзыв о мероприятии, отзыв о мероприятии, </p>
+							</div>
+						</li>
+						<li>
+							<div class = "mini-map"></div>
+							<div class = "feedback-info">
+								<img  src ="/img/guide-ph.png">
+								<p>Отзыв о мероприятии, отзыв о мероприятии, отзыв о мероприятии, отзыв о мероприятии, </p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		<div class = "push"> </div>
+		</div>
+		<footer>
+			<img class = "logo" src = "" alt = "logo">
+			<ul>
+				<li>Маршруты</li>
+				<li>Водные</li>
+				<li>Горные</li>
+				<li>Приключенческие</li>
+				<li>Романтические</li>
+			</ul>
+			<ul>
+				<li>Походники</li>
+				<li>Компаньоны</li>
+				<li>Проводники</li>
+				<li>Агентства</li>
+			</ul>
+			<ul>
+				<li>Точки</li>
+				<li>Города</li>
+				<li>Места</li>
+			</ul>
+			<ul>
+				<li>Контакты</li>
+				<li>О проекте</li>
+				<li>Контакты</li>
+				<li>Я - организатор</li>
+			</ul>
+			<ul class = "SSlinks">
+				<li>Мы в социальных сетях</li>
+				<li class = "icon"><a><img src = "/img/icons/vk-icon.png" ></a></li>
+				<li class = "icon"><a><img src = "/img/icons/google_plus icon.png" ></a></li>
+				<li class = "icon"><a><img src = "/img/icons/twitter-icon.png" ></a></li>
+				<li class = "icon"><a><img src = "/img/icons/facebook  icon.png" ></a></li>
+			</ul>
+		</footer>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<script type="text/javascript" src="/js/script.js">
+
+		</script>
+	</body>
+</html>
