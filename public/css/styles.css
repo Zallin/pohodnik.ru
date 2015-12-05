@@ -73,7 +73,7 @@ footer ul li:first-child{
 		background: url("../img/Altay.jpeg") no-repeat;
 		background-size: cover;
 		display: flex;
-	}  
+	}
 	.search{
 		vertical-align: middle;
 		width: 50%;
@@ -103,7 +103,7 @@ footer ul li:first-child{
 	display: inline-block;
 	width: 190px;
 	height: 190px;
-	margin: 5px 7px; 
+	margin: 5px 7px;
 	position: relative;
 	border-radius: 10px;
 }
@@ -159,7 +159,7 @@ footer ul li:first-child{
 
 
 /*NEW EVENTS STYLES*/
-.new-events.map{
+.new-events #map{
 	width: 1100px;
 	height: 500px;
 	margin: 0 auto;
@@ -335,13 +335,13 @@ footer ul li:first-child{
 	input[type=date]{
 		font-family: sans-serif;
 	}
-	.organize .map{
+	.organize #map{
 		display: inline-block;
 		height: 300px;
 		width:450px;
 		position: relative;
 		top: 550px;
-		left: 230px;
+		left: 590px;
 		border-radius: 1px solid black;
 	}
 	select{
@@ -422,3 +422,7 @@ section{
 
 }
 /*POXOD STYLES END*/
+
+.coords {
+	display: none;
+}
