@@ -18,9 +18,9 @@ var Database = function (){
   this.getHikes = function(fn){
     hikes.getHikes(function (err, hikes) {
       if(err) return fn(err);
-      var coordinates = [];
+      var coordinates = {};
       for(var i = 0; i < hikes.length; i++){
-        coordinates.push(hikes[i].coordinates[0]);
+        coordinates[i] = hikes[i].coordinates[0];
       }
       fn(null, coordinates);
     })

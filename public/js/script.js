@@ -3,7 +3,7 @@ var myMap;
 
 var getHikes = function (fn){
   $.get('/hikes_points', function (data){
-    fn(JSON.parse(data));
+    fn(data);
   });
 }
 
@@ -22,10 +22,10 @@ function init(){
     zoom: 4
   });
 
-  getHikes(function (coords){
-    console.log(coords);
-    for(var i = 0; i < coords.length; i++){
-      // myMap.geoObjects.add(Point(coords[i]));
+  getHikes(function (list){
+    for(key in list){
+      var coords = list[key].split(', ');
+      myMap.geoObjects.add(Point(coords));
     }
   });
 }
