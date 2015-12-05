@@ -298,15 +298,14 @@ footer ul li:first-child{
 	.organize .button{
 	margin: 15px auto;
 	display: block;
-	width: 100px;
-	padding: 10px 15px;
+	padding: 10px 80px;
 	background-color: #3232FF;
 	color: #FFF;
 	text-align: center;
 	}
 	.head{
 		width: 500px;
-		margin: 15px;
+		margin: 15px 0 15px 0;
 		display: inline-block;
 	}
 	.head h1{
@@ -314,6 +313,7 @@ footer ul li:first-child{
 	}
 	.head input{
 		margin-top: 30px;
+		margin-left: 0px;
 		width: 400px;
 		height: 50px;
 		font-size: 1.25em;
