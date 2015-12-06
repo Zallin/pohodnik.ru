@@ -3,6 +3,7 @@ var HikeODM = function (mongoose){
 
   this.addHike = function (data, fn){
     var hike = new Hike({
+      permalink : data.permalink,
       name : data.name,
       city : data.city,
       type : data.type,
@@ -21,12 +22,26 @@ var HikeODM = function (mongoose){
     });
   }
 
+  this.getHike = function (permalink, fn){
+    Hike.find({permalink : permalink}, function (err, docs){
+      if(err) return fn(err);
+      fn(null, docs[0]);
+    });
+  }
+
   this.getHikes = function (fn){
     Hike.find({}, 'coordinates', function (err, docs){
       if(err) return fn(err);
       fn(null, docs)
     })
   }
+
+  this.getHikeByCoordinate = function (coords, fn){
+    Hike.findOne({coordinates : coords}, 'permalink', function (err, doc){
+      if (err) fn(err);
+      fn(null, doc)  
+    });
+   }
 }
 
 module.exports = HikeODM;

@@ -27,5 +27,16 @@ function init(){
       var coords = list[key].split(', ');
       myMap.geoObjects.add(Point(coords));
     }
+
+    myMap.geoObjects.events.add('click', function (e){
+      var object = e.get('target');
+
+      var coords = object.geometry.getCoordinates();
+
+      $.post('/hike_by_coordinate', {"0" : coords[0], "1" : coords[1]}, function (data){
+        location.replace('/hikes/' + data.permalink);
+      }, 'json');
+
+    });
   });
 }

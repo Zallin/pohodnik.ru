@@ -387,7 +387,7 @@ section{
 	width: 350px;
 	margin: 0 0 0 50px;
 }
-.poxod-map{
+#hike-map{
 	width: 650px;
 	height: 400px;
 	border: 1px solid black;
@@ -421,6 +421,10 @@ section{
 	letter-spacing: 3px;
 
 }
+
+/*#hike-map{
+
+}*/
 /*POXOD STYLES END*/
 
 .coords {

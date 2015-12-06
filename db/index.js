@@ -25,6 +25,21 @@ var Database = function (){
       fn(null, coordinates);
     })
   }
+
+  this.getHike = function (permalink, fn){
+    hikes.getHike(permalink, function (err, doc){
+      if(err) return fn(err);
+      fn(null, doc);
+    })
+  }
+
+  this.getPermalinkByCoordinate = function (arr, fn){
+    var coords = arr.join(', ');
+    hikes.getHikeByCoordinate(coords, function (err, doc){
+      if(err) return fn(err);
+      fn(null, doc.permalink);
+    });
+  }
 }
 
 module.exports = new Database();

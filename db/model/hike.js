@@ -2,6 +2,7 @@ module.exports = function (mongoose) {
   var Schema = mongoose.Schema;
 
   var hikeSchema = new Schema({
+    permalink : String,
     type : String,
     date_start : Date,
     date_end : Date,

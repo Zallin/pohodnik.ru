@@ -22,9 +22,11 @@ app.get('/add_hike', function (req, res){
 });
 
 app.post('/add_hike', function (req, res){
-  var coordinates = req.body.coords.split(';');
+  var coordinates = req.body.coords.split(';'),
+      permalink = Math.floor(Math.random() * Math.pow(10, 5));
 
   req.body.coordinates = coordinates;
+  req.body.permalink = permalink;
 
   db.addHike(req.body, function (err){
     if(err) return res.send(500);
@@ -43,8 +45,19 @@ app.get('/hikes_catalogue', function (req, res){
  // rendering hikes page
 });
 
-app.get('/hikes/:id', function (req, res){
-  //
+app.get('/hikes/:permalink', function (req, res){
+  db.getHike(req.params.permalink, function (err, doc){
+    if(err) return res.status(500).send();
+    res.render('hike.html', {hike : doc});
+  });
+});
+
+app.post('/hike_by_coordinate', function (req, res){
+    var coords = [req.body["0"], req.body["1"]];
+    db.getPermalinkByCoordinate(coords, function (err, permalink){
+      if(err) return res.status(500).send();
+      res.send({permalink : permalink});
+    })
 });
 
 var server = app.listen(80, function (){

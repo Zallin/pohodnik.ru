@@ -4,8 +4,8 @@
 		<title>Походник - сводим туристов с гидами</title>
 		<meta charset = "utf-8">
 		<meta type ="name" content = "Походник">
-		<link rel = "stylesheet" href = "./css/normalize.css">
-		<link rel = "stylesheet" href = "./css/styles.css">
+		<link rel = "stylesheet" href = "/css/normalize.css">
+		<link rel = "stylesheet" href = "/css/styles.css">
 	</head>
 	<body>
 		<div class = "page-wrap">
@@ -24,7 +24,7 @@
 				</ul>
 				<a>
 					<div class = "button">
-						Организовать поход
+						<a href="/add_hike">Организовать поход</a>
 					</div>
 				</a>
 					<div class = "auth">
@@ -34,27 +34,21 @@
 			</header>
 			<section>
 				<div class = "sub-header">
-					<h1 class = "hike-name">Каракольские края Алтая</h1>
-					<p class = "hike-loc">Алтайский край, Барнаул</p>
-					<p class = "hike-date">12-23 августа</p>
+					<h1 class = "hike-name">{{hike.name}}</h1>
+					<p class = "hike-loc">{{hike.city}}</p>
+					<p class = "hike-date">{{hike.date_start}}</p>
 				</div>
 				<div class = "left-section">
-					<div class = "poxod-map">
+					<div id="hike-map">
 					</div>
 					<h3>Описание похода</h3>
-					<p class = "hike-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p class = "hike-description">{{hike.description}}</p>
 					<h3>Программа</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<h3>Бюджет</h3><p class = "hike-budget">100500 рублей</p>
-					<h3>Требования к участникам</h3><p hike = "">Рассчитан на людей, имеющих походный опыт, хотя также подойдет и новичкам.</p>
-					<h3>Экипировка</h3>
-					<p>Образец снаряжения</p>
-					<h3>Навыки</h3>
-					<p>Необходимые для участия в походе навыки</p>
+					<h3>Бюджет</h3><p class = "hike-budget">{{hike.price}}</p>
 				</div>
 				<div class = "right-section">
 					<h3>Организатор</h3>
-					<img src = "./img/guide-ph.png">
+					<img src = "/img/guide-ph.png">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</div>
 				<a href = ""><div class = "join-button">Присоединиться</div></a>
@@ -89,10 +83,18 @@
 			</ul>
 			<ul class = "SSlinks">
 				<li>Мы в социальных сетях</li>
-				<li class = "icon"><a><img src = "./img/icons/vk-icon.png" ></a></li>
-				<li class = "icon"><a><img src = "./img/icons/google_plus icon.png" ></a></li>
-				<li class = "icon"><a><img src = "./img/icons/twitter-icon.png" ></a></li>
-				<li class = "icon"><a><img src = "./img/icons/facebook  icon.png" ></a></li>
+				<li class = "icon"><a><img src = "/img/icons/vk-icon.png" ></a></li>
+				<li class = "icon"><a><img src = "/img/icons/google_plus icon.png" ></a></li>
+				<li class = "icon"><a><img src = "/img/icons/twitter-icon.png" ></a></li>
+				<li class = "icon"><a><img src = "/img/icons/facebook  icon.png" ></a></li>
 			</ul>
 		</footer>
+		<ul class="coordinates">
+			{{#each hike.coordinates}}
+				<li>{{this}}</li>
+			{{/each}}
+		</ul>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+			<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+			<script type="text/javascript" src="/js/hike.js"></script>
 	</body>
