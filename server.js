@@ -80,11 +80,11 @@ app.get('/logout', function (req, res){
   res.redirect('/');
 });
 
-app.get('/point_in_radius', function (req, res){
+app.post('/point_in_radius', function (req, res){
   var coordinates = [req.body["0"], req.body["1"]];
-  api.getObjectsInRadius(coordinates, function (err, res){
+  api.getObjectsInRadius(coordinates, function (err, obj){
     if(err) return res.status(500).send();
-    res.send(res);
+    res.send(obj);
   });
 });
 

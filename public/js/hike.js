@@ -27,7 +27,7 @@ function init(){
     zoom: 4
   });
 
-  var lis = $('.coordinates').children();
+  var lis = $('.hidden').children();
   var coords = [];
   lis.each(function (i, el){
     var text = $(el).text();

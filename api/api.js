@@ -25,11 +25,11 @@ var options = {
 
 function API (){
   this.getObjectsInRadius = function (coords, fn){
-    fs.readFile('radius.xml', function (err, rawXml){
+    fs.readFile('./radius.xml', function (err, rawXml){
       if(err) return console.log(err);
       var $ = cheerio.load(rawXml);
       $('point').text(coords.join(','));
-      $('point').attr('radius', 100);
+      $('point').attr('radius', 15);
 
       var xml = $.xml();
 
@@ -46,6 +46,7 @@ function API (){
         });
 
         res.on('end', function (){
+          console.log(response)
           var $ = cheerio.load(response);
 
           var places = {};
@@ -58,7 +59,8 @@ function API (){
 
             places[obj.attr('id')] = {
               coordinates : obj.attr('geo'),
-              name : cdata.match(/\[CDATA\[(.+)\]\]/)[1]
+              name : cdata.match(/\[CDATA\[(.+)\]\]/)[1],
+              photo_url : obj.attr('image')
             }
           });
 
