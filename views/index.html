@@ -28,8 +28,12 @@
 					</div>
 				</a>
 				<div class = "auth">
-					<a href = "">Войти</a>
-					<a href = "">Зарегистрироваться</a>
+					{{#if username}}
+						<a href="/">Вошли как: {{username}}</a>
+					{{else}}
+						<a href = "">Войти</a>
+						<a href = "">Зарегистрироваться</a>
+					{{/if}}
 				</div>
 			</header>
 			<section>

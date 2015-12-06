@@ -11,6 +11,7 @@ module.exports = function (mongoose) {
     difficulty : String,
     description : String,
     max_participants : Number,
+    participants : Array,
     // equip : Array,
     // skills : Array,
     // status : String,

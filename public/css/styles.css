@@ -430,3 +430,7 @@ section{
 .coords {
 	display: none;
 }
+
+.hidden {
+	display: none;
+}

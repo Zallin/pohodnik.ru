@@ -13,7 +13,8 @@ var HikeODM = function (mongoose){
       date_end : data.date_end,
       max_participants : data.max_participants,
       price : data.price,
-      coordinates : data.coordinates
+      coordinates : data.coordinates,
+      participants : [data.lead]
     });
 
     hike.save(function (err){
@@ -39,8 +40,15 @@ var HikeODM = function (mongoose){
   this.getHikeByCoordinate = function (coords, fn){
     Hike.findOne({coordinates : coords}, 'permalink', function (err, doc){
       if (err) fn(err);
-      fn(null, doc)  
+      fn(null, doc)
     });
+   }
+
+   this.addUserToHike = function (obj, fn){
+     Hike.update({name : obj["hike-name"]}, {$push : {participants : obj.user}}, {multi : false}, function (err){
+       if(err) return fn(err);
+       fn(null);
+     })
    }
 }
 

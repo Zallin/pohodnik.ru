@@ -28,8 +28,14 @@
 				</div>
 			</a>
 				<div class = "auth">
-					<a href = "">Войти</a>
-					<a href = "">Зарегистрироваться</a>
+					<div class = "auth">
+						{{#if username}}
+							<a href="/">Вошли как: {{username}}</a>
+						{{else}}
+							<a href = "">Войти</a>
+							<a href = "">Зарегистрироваться</a>
+						{{/if}}
+					</div>
 				</div>
 		</header>
 
@@ -79,6 +85,7 @@
 			<input class = "small-form" type = "text" name="price" placeholder = "на человека">
 			<input type="submit" class="button" value="Создать">
 			<input type="text" name="coords" class="coords">
+			<input type="hidden" name="lead" value={{username}}>
 		</form>
 		<div class = "push"></div>
 	</div>

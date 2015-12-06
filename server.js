@@ -1,7 +1,10 @@
 var express = require('express'),
     cons = require('consolidate'),
     bodyParser = require('body-parser');
-    db = require('./db');
+    db = require('./db'),
+    api = require('./api/api.js');
+
+var user;
 
 var app = express();
 
@@ -12,13 +15,14 @@ app.set('views', __dirname + '\\views');
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended : false}));
+app.use(bodyParser.json())
 
 app.get('/', function (req, res){
-  res.render('index.html', {});
+  res.render('index.html', {username : user});
 });
 
 app.get('/add_hike', function (req, res){
-  res.render('add.html', {});
+  res.render('add.html', {username : user});
 });
 
 app.post('/add_hike', function (req, res){
@@ -48,7 +52,7 @@ app.get('/hikes_catalogue', function (req, res){
 app.get('/hikes/:permalink', function (req, res){
   db.getHike(req.params.permalink, function (err, doc){
     if(err) return res.status(500).send();
-    res.render('hike.html', {hike : doc});
+    res.render('hike.html', {hike : doc, username : user});
   });
 });
 
@@ -57,9 +61,40 @@ app.post('/hike_by_coordinate', function (req, res){
     db.getPermalinkByCoordinate(coords, function (err, permalink){
       if(err) return res.status(500).send();
       res.send({permalink : permalink});
-    })
+    });
+});
+
+app.get('/login', function (req, res){
+  res.render('login.html');
+})
+
+app.post('/login', function (req, res){
+  user = req.body.username;
+
+  res.redirect('/');
+});
+
+app.get('/logout', function (req, res){
+  user = null;
+
+  res.redirect('/');
+});
+
+app.get('/point_in_radius', function (req, res){
+  var coordinates = [req.body["0"], req.body["1"]];
+  api.getObjectsInRadius(coordinates, function (err, res){
+    if(err) return res.status(500).send();
+    res.send(res);
+  });
+});
+
+app.post('/join', function (req, res){
+  db.addUserToHike(req.body, function (err){
+    if(err) return res.status(500).send();
+    res.redirect('/hikes/' + req.body.permalink);
+  })
 });
 
 var server = app.listen(80, function (){
-  console.log('server is up')
+  console.log('server is up');
 });

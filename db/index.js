@@ -40,6 +40,13 @@ var Database = function (){
       fn(null, doc.permalink);
     });
   }
+
+  this.addUserToHike = function(obj, fn){
+    hikes.addUserToHike(obj, function (err){
+      if (err) return fn(err);
+      fn(null);
+    })
+  }
 }
 
 module.exports = new Database();
