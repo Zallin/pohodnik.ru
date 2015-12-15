@@ -11,7 +11,7 @@ var app = express();
 app.engine('html', cons.handlebars);
 
 app.set('view engine', 'html');
-app.set('views', __dirname + '\\views');
+app.set('views', __dirname + '/views');
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended : false}));
